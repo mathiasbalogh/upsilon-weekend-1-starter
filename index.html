@@ -8,8 +8,10 @@
       integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
       crossorigin="anonymous"></script>
     <script src="app.js" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
     </head>
   <body>
+    <h1>Salary Tracker</h1>
     <form>
       <label for="employeeFirstName">First Name</label>
       <input type="text" id="employeeFirstName" name="employeeFirstName" />
@@ -17,6 +19,10 @@
       <input type="text" id="employeeLastName" name="employeeLastName" />
       <label for="employeeIdNumber">ID Number</label>
       <input type="text" name="employeeIdNumber" />
+      <label for="jobTitle">Job Title</label>
+      <input type="text" name="jobTitle" />
+      <label for="annualSalary">Annual Salary</label>
+      <input type="number" name="annualSalary" />
       <input type="submit" value="Submit" />
     </form>
 
@@ -24,5 +30,8 @@
       <h2>Employees</h2>
       <!-- to be added via JavaScript -->
     </div>
+    <div id="monthlySalary">
+      <h2>Monthly Salary Expenditure</h2>
+
   </body>
 </html>
