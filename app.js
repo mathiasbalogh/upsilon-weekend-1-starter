@@ -46,14 +46,14 @@ function clearForm() {
 }
 
 function appendSalary(sal){
-  var monthlySalary = 0;
-  var $sal = $('<div class="monthlySalary"></div>');
+  var monthlySalary1 = 0;
+  var $sal = $('<div class="monthlySalary2"></div>');
 
   salaryArray.forEach(function (input) {
     var value = toString(input.value)
-    monthlySalary += value;
+    monthlySalary1 += value;
   });
 
   $sal.append('<p>'+ monthlySalary + '</p>')
-  $('#monthlySalary').append($sal);
+  $('#monthlySalary3').append($sal);
 }
