@@ -21,7 +21,24 @@ h1 {
 .employee label{
   display: inline-block;
 }
-p{
+p {
   display: inline-block;
   padding-left: 20px;
+}
+h3  {
+  display: inline-block;
+}
+h2 {
+  display: inline-block;
+}
+.monthlySalary3 {
+  display: inline-block;
+}
+button {
+  max-width: 10px;
+  max-height: 10px;
+  position: relative;
+  top:-70px;
+  left:180px;
+  background-color: red;
 }
