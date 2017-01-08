@@ -1,6 +1,7 @@
 $(function () {
   // console.log('document is ready');
-  var salaryArray = [0];
+  var salaryArray = [];
+
   $('form').on('submit', function (event) {
     // console.log('form submitted');
 
@@ -14,9 +15,11 @@ $(function () {
     });
     formAsArray.forEach(function (input){
         if(input.name == "annualSalary"){
-        salaryArray.push(input.value);
+        var salaryValue= input.value;
+        salaryArray.push(salaryValue);
         }
     });
+
     appendDom(formData);
     console.log(salaryArray);
     appendSalary(salaryArray);
@@ -49,11 +52,11 @@ function appendSalary(sal){
   var monthlySalary1 = 0;
   var $sal = $('<div class="monthlySalary2"></div>');
 
-  salaryArray.forEach(function (input) {
-    var value = toString(input.value)
+  sal.forEach(function (input) {
+    var value = Number(input);
     monthlySalary1 += value;
   });
 
-  $sal.append('<p>'+ monthlySalary + '</p>')
+  $sal.append('<p>'+ monthlySalary1 + '</p>')
   $('#monthlySalary3').append($sal);
 }
