@@ -1,6 +1,9 @@
+var salaryArray = [];
+var salary7 = {};
+var subtractor = 0;
 $(function () {
   // console.log('document is ready');
-  var salaryArray = [];
+
 
   $('form').on('submit', function (event) {
     // console.log('form submitted');
@@ -17,6 +20,7 @@ $(function () {
         if(input.name == "annualSalary"){
         var salaryValue= input.value;
         salaryArray.push(salaryValue);
+        // salary7 += ($('form').find('#employeeFirstName').text(), salaryValue );
         }
     });
 
@@ -37,13 +41,15 @@ $(function () {
       newMonthly = (yearlySalary - subtractor)/12;
     });
     // for(i=0;i < salaryArray.length;i++){
-    salaryArray.forEach(function(i){
-      if(Number(salaryArray.indexOf(i)) == subtractor){
+    salaryArray.forEach(function(input){
+      // var value = Number(input);
+
+      if(Number(salaryArray.indexOf(input)) == subtractor){
         // var indexToRemove = i;
         // salaryArray = salaryArray.splice(indexToRemove, 1);
-        var indexToRemove = salaryArray.indexOf(i);
+        var indexToRemove = salaryArray.indexOf(input);
         salaryArray = salaryArray.remove(indexToRemove);
-    } else{console.log(salaryArray.indexOf(i));}
+    } else{console.log(Number(salaryArray.indexOf(input)));}
     console.log(salaryArray);
   })
     $(this).closest('.employee').remove();
@@ -87,7 +93,9 @@ function appendSalary(sal){
     // monthlySalary1 = Math.round(monthlySalary1);
     monthlySalary1 = parseFloat(monthlySalary1).toFixed(2);
   });
-
+  // for(i=0;i<salary7.length;i++){
+  //   yearlySalary = salary7[i].value();
+  // }
   $sal.append('<p>$'+monthlySalary1+'</p>');
   $('#monthlySalary3').append($sal);
 }
