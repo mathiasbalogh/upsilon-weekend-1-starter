@@ -30,19 +30,22 @@ $(function () {
     var newMonthly = 0;
     var subtractor = $(this).closest('.employee').find('#salary').text();
     subtractor = Number(subtractor);
-    // $(this).closest('.employee').remove();
-    // $('div').remove('.monthlySalary3');
     var $nMS = $('<div class="monthlySalary3"></div>');
     salaryArray.forEach(function(input){
       var value = Number(input);
       yearlySalary += value;
       newMonthly = (yearlySalary - subtractor)/12;
-    })
-    for(i=0;i<salaryArray.length;i++){
-      if(i == subtractor){
-        salaryArray = salaryArray.splice(i, 1);
-    }
-    }
+    });
+    // for(i=0;i < salaryArray.length;i++){
+    salaryArray.forEach(function(i){
+      if(Number(salaryArray.indexOf(i)) == subtractor){
+        // var indexToRemove = i;
+        // salaryArray = salaryArray.splice(indexToRemove, 1);
+        var indexToRemove = salaryArray.indexOf(i);
+        salaryArray = salaryArray.remove(indexToRemove);
+    } else{console.log(salaryArray.indexOf(i));}
+    console.log(salaryArray);
+  })
     $(this).closest('.employee').remove();
     $('div').remove('.monthlySalary3');
     $nMS.append('<p>$'+newMonthly+'</p>');
@@ -87,4 +90,7 @@ function appendSalary(sal){
 
   $sal.append('<p>$'+monthlySalary1+'</p>');
   $('#monthlySalary3').append($sal);
+}
+Array.prototype.remove = function(index) {
+    this.splice(index, 1);
 }
