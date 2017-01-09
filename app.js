@@ -37,6 +37,8 @@ $(function () {
       var value = Number(input);
       yearlySalary += value;
       newMonthly = (yearlySalary - subtractor)/12;
+      // newMonthly = parseFloat(newMonthly).toFixed(2);
+
     });
     salaryArray.forEach(function(input, i){
       if (input == subtractor){

@@ -1,9 +1,10 @@
 .employee {
   display: inline-block;
   margin: 20px 20px;
-  background-color: olive;
+  background-color: rgb(36, 2, 42);
   padding:10px 40px 10px 40px;
   font-size: 150%;
+  color: blanchedalmond;
 }
 form {
   margin: 20px auto;
@@ -15,7 +16,7 @@ input {
 }
 h1 {
   margin: 0 auto;
-  padding-top: 10px;
+  padding-top: 20px;
   padding-bottom: 40px;
   text-align: center;
   background-color: rgb(36, 223, 189)
@@ -43,4 +44,7 @@ button {
   top:-100px;
   left:220px;
   background-color: red;
+}
+#employees {
+  background-color: rgb(36, 223, 189)
 }
