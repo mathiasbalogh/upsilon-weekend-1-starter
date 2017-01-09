@@ -27,7 +27,7 @@ $(function () {
     appendSalary(salaryArray);
     clearForm();
   });
-  $(document).on('click','#delete', function (){
+  $('#employees').on('click','.delete', function (){
     var yearlySalary = 0;
     var newMonthly = 0;
     var subtractor = $(this).closest('.employee').find('#salary').text();
@@ -37,17 +37,21 @@ $(function () {
       var value = Number(input);
       yearlySalary += value;
       newMonthly = (yearlySalary - subtractor)/12;
-      // newMonthly = parseFloat(newMonthly).toFixed(2);
+      newMonthly = newMonthly.toLocaleString("en-US", {style: 'currency', currency: 'USD'});
 
     });
     salaryArray.forEach(function(input, i){
-      if (input == subtractor){
+      if (salaryArray.length === 1) {
+        salaryArray = [];
+      }
+      else if (input == subtractor){
         salaryArray = salaryArray.splice(i-1, 1);
     }
   })
+  console.log(salaryArray);
     $(this).closest('.employee').remove();
     $('div').remove('.monthlySalary3');
-    $nMS.append('<p>$'+newMonthly+'</p>');
+    $nMS.append('<p>'+newMonthly+'</p>');
     $('#monthlySalary3').append($nMS);
   });
 });
@@ -57,7 +61,7 @@ function appendDom(emp) {
 
   $emp.append('<label for="employeeName">Name:</label>');
   $emp.append('<p name="employeeName">' + emp.employeeFirstName + ' ' + emp.employeeLastName + '</p><br>'); // add our employee data
-  $emp.append('<button id= "delete">x</button>')
+  $emp.append('<button class = "delete">x</button>')
   $emp.append('<label for="id">ID#:</label>');
   $emp.append('<p name="id">' + emp.employeeIdNumber + '</p><br>');
   $emp.append('<label for="title">Job Title:</label>');
@@ -83,9 +87,9 @@ function appendSalary(sal){
     var value = Number(input);
     yearlySalary += value;
     monthlySalary1 = yearlySalary/12;
-    monthlySalary1 = parseFloat(monthlySalary1).toFixed(2);
+    monthlySalary1 = monthlySalary1.toLocaleString("en-US", {style: 'currency', currency: 'USD'});
   });
   // }
-  $sal.append('<p>$'+monthlySalary1+'</p>');
+  $sal.append('<p>'+monthlySalary1+'</p>');
   $('#monthlySalary3').append($sal);
 }
