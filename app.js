@@ -39,7 +39,7 @@ $(function () {
       newMonthly = (yearlySalary - subtractor)/12;
     });
     salaryArray.forEach(function(input, i){
-      if(input == subtractor){
+      if (input == subtractor){
         salaryArray = salaryArray.splice(i-1, 1);
     }
   })
@@ -87,4 +87,3 @@ function appendSalary(sal){
   $sal.append('<p>$'+monthlySalary1+'</p>');
   $('#monthlySalary3').append($sal);
 }
-    

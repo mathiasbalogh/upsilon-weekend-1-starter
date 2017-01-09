@@ -3,6 +3,7 @@
   margin: 20px 20px;
   background-color: olive;
   padding:10px 40px 10px 40px;
+  font-size: 150%;
 }
 form {
   margin: 20px auto;
@@ -13,10 +14,11 @@ input {
   margin-bottom: 20px;
 }
 h1 {
-  margin: 20px auto;
+  margin: 0 auto;
   padding-top: 10px;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
   text-align: center;
+  background-color: rgb(36, 223, 189)
 }
 .employee label{
   display: inline-block;
@@ -35,10 +37,10 @@ h2 {
   display: inline-block;
 }
 button {
-  max-width: 10px;
-  max-height: 10px;
+  max-width: 20px;
+  max-height: 30px;
   position: relative;
-  top:-70px;
-  left:180px;
+  top:-100px;
+  left:220px;
   background-color: red;
 }
